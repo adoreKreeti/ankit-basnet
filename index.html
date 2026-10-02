@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ankit ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f6e9df;
+  --pink: #f0b7b9;
+  --gold: #dfc4a0;
+  --night: #101724;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(12,19,33,.30), rgba(12,19,33,.86)),
+    radial-gradient(ellipse at 50% 25%, #6d5264 0%, #29334a 38%, #101724 80%);
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  color: #fff0df;
+  animation: twinkle var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .18; transform: scale(.7); }
+  to { opacity: .95; transform: scale(1.3); }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: rgba(12,18,29,.45);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+
+.logo {
+  font: 27px 'Dancing Script', cursive;
+  color: var(--pink);
+}
+
+nav a {
+  color: #f4e7df;
+  text-decoration: none;
+  margin-left: 23px;
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  transition: color .3s;
+}
+
+nav a:hover { color: var(--pink); }
+
+section { scroll-margin-top: 85px; }
+
+.hero {
+  min-height: 100vh;
+  padding: 145px 22px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.moon {
+  font-size: 34px;
+  color: #f8e4ca;
+  margin-bottom: 23px;
+  filter: drop-shadow(0 0 18px #f4cda8);
+  animation: float 4s ease-in-out infinite;
+}
+
+.eyebrow {
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 5px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(55px, 10vw, 108px);
+  font-weight: 300;
+  line-height: 1;
+  margin: 22px 0 12px;
+  letter-spacing: -2px;
+}
+
+.name {
+  color: var(--pink);
+  font: clamp(34px, 6vw, 57px) 'Dancing Script', cursive;
+  margin: 13px 0;
+}
+
+.subtitle {
+  font: 12px 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  margin-top: 15px;
+  color: #d7cbd1;
+}
+
+.hero-line {
+  width: 70px;
+  height: 1px;
+  background: var(--pink);
+  margin: 28px auto;
+}
+
+.intro {
+  max-width: 500px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #e7dce0;
+}
+
+.script {
+  font: 25px 'Dancing Script', cursive;
+  color: var(--pink);
+  margin-top: 20px;
+}
+
+.glow-button {
+  margin-top: 32px;
+  padding: 15px 30px;
+  border: 1px solid rgba(240,183,185,.7);
+  border-radius: 50px;
+  background: rgba(255,255,255,.04);
+  color: var(--cream);
+  font: 14px 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(240,183,185,.08);
+  transition: .4s;
+}
+
+.glow-button:hover {
+  background: rgba(240,183,185,.18);
+  box-shadow: 0 0 40px rgba(240,183,185,.22);
+  transform: translateY(-3px);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 25px;
+  color: #b9a9b5;
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+}
+
+section.content {
+  padding: 95px 20px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(38px, 6vw, 57px);
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  text-align: center;
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  color: var(--pink);
+  margin-bottom: 45px;
+}
+
+.glass {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+
+.letter {
+  max-width: 690px;
+  margin: auto;
+  padding: clamp(25px, 6vw, 55px);
+  line-height: 1.9;
+  font-size: 19px;
+}
+
+.letter h3 {
+  font: 28px 'Dancing Script', cursive;
+  color: var(--pink);
+  margin-bottom: 24px;
+}
+
+.letter p { margin-bottom: 19px; }
+
+.signature {
+  font: 26px 'Dancing Script', cursive;
+  color: var(--pink);
+  margin-top: 27px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.memory {
+  padding: 28px 20px;
+  min-height: 190px;
+  text-align: center;
+  transition: .35s;
+  cursor: pointer;
+}
+
+.memory:hover {
+  transform: translateY(-7px) rotate(-1deg);
+  border-color: rgba(240,183,185,.6);
+}
+
+.memory .emoji {
+  font-size: 29px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.memory h3 {
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 9px;
+}
+
+.memory p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #cfc2ce;
+}
+
+.love-list {
+  max-width: 600px;
+  margin: auto;
+  padding: 32px;
+}
+
+.love-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  font-size: 19px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.love-item:last-child { border-bottom: 0; }
+
+.love-item:hover {
+  color: var(--pink);
+  padding-left: 8px;
+}
+
+.love-item span { color: var(--pink); }
+
+.surprise-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 38px 24px;
+  text-align: center;
+}
+
+.surprise-box p {
+  font-size: 19px;
+  line-height: 1.8;
+  margin: 20px auto;
+  max-width: 450px;
+}
+
+#secret {
+  display: none;
+  margin-top: 28px;
+  padding: 27px;
+  border: 1px dashed rgba(240,183,185,.6);
+  border-radius: 20px;
+  animation: appear .7s ease;
+}
+
+#secret h3 {
+  font: 31px 'Dancing Script', cursive;
+  color: var(--pink);
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 38px 15px;
+  border-top: 1px solid rgba(255,255,255,.09);
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  color: #b9a9b5;
+}
+
+footer span { color: var(--pink); }
+
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  padding: 13px 22px;
+  border: 1px solid #f0b7b9;
+  border-radius: 40px;
+  background: #202332;
+  color: #fff0e8;
+  opacity: 0;
+  transition: .4s;
+  pointer-events: none;
+  z-index: 20;
+  text-align: center;
+  width: max-content;
+  max-width: 90%;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.floating-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 30;
+  animation: rise 2.3s ease-out forwards;
+}
+
+@keyframes rise {
+  0% { opacity: 1; transform: translateY(0) scale(.7); }
+  100% { opacity: 0; transform: translateY(-180px) scale(1.5) rotate(25deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+  nav { padding: 15px 5%; }
+  .logo { font-size: 22px; }
+  nav .links { display: flex; gap: 12px; }
+  nav a { margin: 0; font-size: 9px; letter-spacing: 0; }
+  nav a:nth-child(2), nav a:nth-child(3) { display: none; }
+  .hero { min-height: 90vh; }
+  .grid { grid-template-columns: 1fr; }
+  .memory { min-height: auto; }
+  section.content { padding: 75px 18px; }
+  .letter { font-size: 18px; }
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<nav>
+  <div class="logo">My Dummy ♡</div>
+  <div class="links">
+    <a href="#home">HOME</a>
+    <a href="#letter">MY LETTER</a>
+    <a href="#moments">MOMENTS</a>
+    <a href="#love">WHY YOU</a>
+    <a href="#surprise">SURPRISE</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="moon">☾</div>
+  <p class="eyebrow">A little universe, made for you</p>
+  <h1>Happy<br>Boyfriend Day</h1>
+  <div class="name">Ankit Basnet ♡</div>
+  <p class="subtitle">SAME YOU. DIFFERENT DAY. STILL MY FAVORITE.</p>
+  <div class="hero-line"></div>
+  <p class="intro">
+    Out of all the people in this universe,<br>
+    somehow my heart found its favorite idiot.
+  </p>
+  <p class="script">And yes, unfortunately, it's you. ♡</p>
+  <button class="glow-button" onclick="goTo('letter')">
+    A little letter for you ↓
+  </button>
+  <div class="scroll">SCROLL SLOWLY · MAKE A WISH</div>
+</header>
+
+<section class="content" id="letter">
+  <h2 class="section-title">Dear, my dummy</h2>
+  <p class="section-sub">✧ WORDS I DON'T ALWAYS SAY ✧</p>
+  <div class="glass letter">
+    <h3>To my favorite person,</h3>
+    <p>
+      I don't know how you manage to annoy me and make me
+      smile at the same time. You're genuinely one of my
+      favorite parts of life, even when you're being the
+      biggest idiot ever. 😭
+    </p>
+    <p>
+      I love the little moments, the stupid jokes, the
+      random conversations, and the memories that might
+      seem ordinary but mean so much to me.
+    </p>
+    <p>
+      You don't have to be perfect. You don't have to
+      have everything figured out. I just hope you always
+      remember that you matter, that you're appreciated,
+      and that somebody out here thinks you're pretty
+      special.
+    </p>
+    <p>
+      If I had to choose again, I'd still choose my dummy.
+      In every universe, in every little version of life,
+      I'd find my way back to you. ❤️
+    </p>
+    <div class="signature">
+      Forever your girl (hopefully),<br>
+      with all my love ♡
+    </div>
+  </div>
+</section>
+
+<section class="content" id="moments">
+  <h2 class="section-title">Our little universe</h2>
+  <p class="section-sub">✧ LITTLE THINGS, BIG FEELINGS ✧</p>
+  <div class="grid">
+    <div class="glass memory" onclick="toast('Some moments deserve to last forever. ♡')">
+      <span class="emoji">☾</span>
+      <h3>Our conversations</h3>
+      <p>When a simple hello somehow becomes my favorite part of the day.</p>
+    </div>
+    <div class="glass memory" onclick="toast('You are my favorite kind of chaos. ♡')">
+      <span class="emoji">☁</span>
+      <h3>Your silliness</h3>
+      <p>The nonsense, the teasing, the reasons I laugh when I shouldn't.</p>
+    </div>
+    <div class="glass memory" onclick="toast('If I could bottle a feeling, it would be this one. ♡')">
+      <span class="emoji">✧</span>
+      <h3>The little things</h3>
+      <p>The things you do without even realizing how much they mean.</p>
+    </div>
+  </div>
+  <p class="script" style="text-align:center;margin-top:30px">
+    Some things are too special for words.
+  </p>
+</section>
+
+<section class="content" id="love">
+  <h2 class="section-title">Why you?</h2>
+  <p class="section-sub">✧ A VERY SHORT LIST (I COULD GO ON) ✧</p>
+  <div class="glass love-list">
+    <div class="love-item" onclick="toast('YES. EVEN WHEN YOU ARE ANNOYING. ♡')">
+      <span>♡</span> Your silly jokes, even the terrible ones
+    </div>
+    <div class="love-item" onclick="toast('You have no idea how cute you are. ♡')">
+      <span>♡</span> The way you make ordinary days special
+    </div>
+    <div class="love-item" onclick="toast('That smile is not helping your case. ♡')">
+      <span>♡</span> Your smile and all your little expressions
+    </div>
+    <div class="love-item" onclick="toast('I notice more than you think. ♡')">
+      <span>♡</span> The little things you probably think I don't notice
+    </div>
+    <div class="love-item" onclick="toast('It was always going to be you, dummy. ♡')">
+      <span>♡</span> Simply being you. Nothing more, nothing less.
+    </div>
+  </div>
+</section>
+
+<section class="content" id="surprise">
+  <h2 class="section-title">One last thing...</h2>
+  <p class="section-sub">✧ OPEN ONLY IF YOU'RE MY DUMMY ✧</p>
+  <div class="glass surprise-box">
+    <div class="moon">♡</div>
+    <p>
+      Okay, enough reading. I have one tiny secret
+      left for you, and you have to click the button
+      to find out.
+    </p>
+    <button class="glow-button" id="surpriseBtn" onclick="revealSecret()">
+      Open this, dummy ♡
+    </button>
+    <div id="secret">
+      <h3>Surpriseee, my love. 🌙</h3>
+      <p>
+        If you ever wonder whether you're special to me,
+        I hope you remember this little corner of the
+        internet that I made just for you.
+      </p>
+      <p>
+        You are loved in the quiet moments, in the silly
+        moments, and even when you're being an absolute
+        headache. 😭❤️
+      </p>
+      <p>
+        Happy Boyfriend Day, Ankit Basnet.
+        Now come here. I want a hug. 🫂
+      </p>
+      <div class="signature">I love you, my dummy. ♡</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  MADE WITH ALL MY LOVE <span>♡</span><br><br>
+  <span style="letter-spacing:5px">YOU · ME · ALWAYS</span>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+// Generate a quiet little galaxy
+const starField = document.getElementById('stars');
+
+for (let i = 0; i < 100; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.textContent = Math.random() > .8 ? '✧' : '·';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.fontSize = (Math.random() * 12 + 4) + 'px';
+  star.style.setProperty('--duration', (2 + Math.random() * 4) + 's');
+  star.style.animationDelay = Math.random() * 4 + 's';
+  starField.appendChild(star);
+}
+
+// Smooth scrolling
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Tiny messages for the interactive cards
+let toastTimer;
+
+function toast(message) {
+  const box = document.getElementById('toast');
+  box.textContent = message;
+  box.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => box.classList.remove('show'), 2600);
+}
+
+// Reveal the secret and sprinkle hearts
+function revealSecret() {
+  const secret = document.getElementById('secret');
+  const button = document.getElementById('surpriseBtn');
+
+  secret.style.display = 'block';
+  button.textContent = 'You are loved, dummy ♡';
+  button.disabled = true;
+  button.style.opacity = '.7';
+
+  for (let i = 0; i < 24; i++) {
+    setTimeout(() => {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.textContent = ['♡', '♥', '✧', '💕'][Math.floor(Math.random() * 4)];
+      heart.style.left = (10 + Math.random() * 80) + 'vw';
+      heart.style.top = (45 + Math.random() * 45) + 'vh';
+      heart.style.color = Math.random() > .5 ? '#f0b7b9' : '#dfc4a0';
+      heart.style.fontSize = (14 + Math.random() * 22) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2400);
+    }, i * 75);
+  }
+
+  secret.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>
